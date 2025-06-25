@@ -32,3 +32,9 @@
     left: 0;
     right: 0;
     }
+
+.boxes__item {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
