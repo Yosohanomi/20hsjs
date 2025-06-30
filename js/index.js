@@ -3,7 +3,9 @@ const boxes = document.querySelector('#boxes')
 const create = document.querySelector('button[data-action="render"]')
 const remove = document.querySelector('button[data-action="destroy"]')
 // const children = boxes.children;
-const scrollAmount = 5; 
+const scrollAmount = 5;
+let elementSize = 30;
+
 document.addEventListener('keydown', event => {
     event.preventDefault();
     if(event.code === 'KeyD') {
@@ -21,14 +23,15 @@ function random() {
 // function createBoxes(amount) {
     
 // }
+
 create.addEventListener('click', ()=> {
+
     const div = document.createElement('div')
-    console.log(div);
     div.classList.add('boxes__item')
     div.style.backgroundColor = `rgb(${random()},${random()},${random()})`
-    div.style.height += '10px'
-    div.style.width += '10px'
+    div.style.height = `${elementSize}px`;
+    div.style.width = `${elementSize}px`;
+    elementSize += 10;
     div.textContent = 'ppp'
     boxes.appendChild(div);
-    console.log(boxes);
 })
